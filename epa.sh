@@ -26,6 +26,7 @@ epa-create-environment(){
 
   virtualenv -p $(which "${env}") .epa/"${env}"
   source .epa/"${env}"/bin/activate
+
   pip install --upgrade pip
   pip install numpy
   pip install scipy
@@ -54,7 +55,6 @@ epa-create(){
 }
 
 epa-update(){
-  echo epa-update $@
   if [ -z "${EPA_ENV}" ]; then
     echo You need to be in an epa shell to update
     return
